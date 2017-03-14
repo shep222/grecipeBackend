@@ -5,43 +5,43 @@ exports.seed = function(knex, Promise) {
             // Inserts seed entries
             return knex('ingredient').insert([{
                     id: 1,
-                    name: '2 tablespoons olive oil'
+                    name: 'olive oil'
                 }, {
                     id: 2,
-                    name: '2 cloves garlic, crushed finely chopped'
+                    name: 'garlic'
                 }, {
                     id: 3,
-                    name: '1/4 teaspoon crushed red pepper flakes'
+                    name: 'crushed red pepper flakes'
                 }, {
                     id: 4,
-                    name: '6 skinless, boneless chicken breasts'
+                    name: 'chicken breasts'
                 }, {
                     id: 5,
-                    name: '2 cups mariniara sauce'
+                    name: 'mariniara sauce'
                 }, {
                     id: 6,
-                    name: '1/4 cup grated Parmesan'
+                    name: 'Parmesan'
                 }, {
                     id: 7,
-                    name: '5 ounce garlic croutons'
+                    name: 'garlic croutons'
                 }, {
                     id: 8,
-                    name: '16 oz bow tie pasta'
+                    name: 'bow tie pasta'
                 }, {
                     id: 9,
-                    name: '2 green onions, chopped'
+                    name: 'onions'
                 }, {
                     id: 10,
                     name: '6 oz feta cheese, crumbled'
                 }, {
                     id: 11,
-                    name: '1/2 cup balsamic vinegar'
+                    name: 'balsamic vinegar'
                 }, {
                     id: 12,
-                    name: '1/4 cup extra virgin olive oil'
+                    name: 'extra virgin olive oil'
                 }, {
                     id: 13,
-                    name: '2 cups chopped fresh tomato'
+                    name: 'tomato'
                 }
 
             ]);
