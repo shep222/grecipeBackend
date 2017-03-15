@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
         database.getIngredient().where('recipe_id', req.query.recipeId)
             .join('ingredient_recipe', 'ingredient.id', 'ingredient_recipe.ingredient_id')
             .join('recipe', 'ingredient_recipe.recipe_id', 'recipe.id')
-            .select('ingredient.*')
+            .select('ingredient_recipe.*', 'ingredient.*')
 
             // var ingredients = knex('ingredient_recipe').where('recipe_id', req.query.recipeId)
             //     .join('ingredient', 'ingredient_recipe.ingredient_id', '=', 'ingredient.id');
