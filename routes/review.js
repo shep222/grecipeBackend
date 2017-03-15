@@ -1,12 +1,21 @@
 const router = require('express').Router()
 const database = require('../database/reviewAPI')
 
-
 router.get('/', (req, res) => {
-    database.getReview().then((review) => {
-        res.send(review)
+  if (req.query.recipeId) {
+    database.getReview().where('recipe_id', req.query.recipeId)
+    .join('recipe', 'recipe.id', ' review.recipe_id')
+    .select('review.*')
+    .then((review) => {
+      res.send(review)
     })
+  } else {
+    database.getReview().then((review) => {
+      res.send(review)
+    })
+  }
 })
+
 
 router.get('/:id', (req, res) => {
     database.getSingleReview(req.params.id).then((review) => {

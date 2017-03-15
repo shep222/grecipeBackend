@@ -5,6 +5,7 @@ exports.up = (knex) => {
         review.timestamp('reviewTime').defaultTo(knex.fn.now())
         review.string('user_id').references('email').inTable('user').onDelete('CASCADE')
         review.integer('recipe_id').references('id').inTable('recipe').onDelete('CASCADE')
+        review.integer('rating')
     })
 };
 

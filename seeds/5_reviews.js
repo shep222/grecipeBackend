@@ -7,12 +7,14 @@ exports.seed = function(knex, Promise) {
                     id: 1,
                     recipe_id: 1,
                     reviewBody: 'tastes like shit',
-                    user_id: 'thomas.castleman@gmail.com'
+                    user_id: 'thomas.castleman@gmail.com',
+                    rating: 4
                 }, {
                     id: 2,
                     recipe_id: 2,
                     reviewBody: 'MMMMMMMM So good',
-                    user_id: 'john.sheplerjr@gmail.com'
+                    user_id: 'john.sheplerjr@gmail.com',
+                    rating: 5
                 }
             ]);
         }).then(function () {
