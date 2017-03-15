@@ -2,9 +2,18 @@ const router = require('express').Router()
 const database = require('../database/stepAPI')
 
 router.get('/', (req, res) => {
-    database.getStep().then((step) => {
-        res.send(step)
+  if (req.query.recipeId) {
+    database.getStep().where('recipe_id', req.query.recipeId)
+    .join('recipe', 'recipe.id', ' step.recipe_id')
+    .select('step.*')
+    .then((step) => {
+      res.send(step)
     })
+  } else {
+    database.getStep().then((step) => {
+      res.send(step)
+    })
+  }
 })
 
 router.get('/:id', (req, res) => {

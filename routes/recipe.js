@@ -13,6 +13,12 @@ router.get('/:id', (req, res) => {
     })
 })
 
+// router.get('/:id/', (req, res) => {
+//     database.getSingleRecipe(req.params.id).then((recipe) => {
+//         res.send(recipe)
+//     })
+// })
+
 router.post('/', (req, res) => {
     database.createRecipe(req.body).then(() => {
 

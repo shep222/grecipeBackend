@@ -3,6 +3,7 @@ exports.up = (knex) => {
         step.increments()
         step.text('stepBody')
         step.integer('recipe_id').references('id').inTable('recipe').onDelete('CASCADE')
+        step.integer('orderNumber')
 
     });
 }
