@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     database.getReview().where('recipe_id', req.query.recipeId)
     .join('recipe', 'recipe.id', ' review.recipe_id')
     .join('user','recipe.user_id', 'user.email')
-    .select('review.*', 'user.postName')
+    .select('review.*')
     .then((review) => {
       res.send(review)
     })

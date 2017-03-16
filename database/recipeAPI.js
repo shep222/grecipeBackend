@@ -4,11 +4,7 @@ module.exports = {
   getRecipe: () => db('recipe'),
 
 
-  createRecipe: (newItem) => db('user').insert({email: newItem.user_id})
-  .whereNotExists(db('user')
-  .where('email', newItem.user_id))
-  .then(()=>{
-  db('recipe').insert(newItem)}),
+  createRecipe: (newItem) => db('recipe').insert(newItem),
 
 
 
