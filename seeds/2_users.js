@@ -4,12 +4,10 @@ exports.seed = function(knex, Promise) {
         .then(function() {
             // Inserts seed entries
             return knex('user').insert([{
-                    email: 'john.sheplerjr@gmail.com',
-                    postName: 'John Shepler'
+                    email: 'john.sheplerjr@gmail.com'
                 },
                 {
-                    email: 'thomas.castleman@gmail.com',
-                    postName: 'Thomas'
+                    email: 'thomas.castleman@gmail.com'
                 },
 
             ]);

@@ -7,8 +7,6 @@ router.get('/', (req, res) => {
     .join('ingredient_recipe','ingredient_recipe.recipe_id' , 'recipe.id')
     .join('ingredient','ingredient_recipe.ingredient_id', 'ingredient.id')
     .where('ingredient.id', req.query.ingredientId)
-
-    // .select('ingredient_recipe.*', 'ingredient.*')
      .select('recipe.*')
     .then((recipe) => {
       res.send(recipe)
@@ -22,7 +20,6 @@ router.get('/', (req, res) => {
     })
   }
 })
-
 
 router.get('/:id', (req, res) => {
     database.getSingleRecipe(req.params.id).then((recipe) => {
@@ -40,7 +37,6 @@ router.post('/:id/associateIngredient/:ingredientId', (req, res) => {
 
 router.post('/', (req, res) => {
     database.createRecipe(req.body).then(() => {
-
         res.sendStatus(201)
     })
 })
