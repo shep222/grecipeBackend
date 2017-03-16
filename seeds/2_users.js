@@ -5,11 +5,11 @@ exports.seed = function(knex, Promise) {
             // Inserts seed entries
             return knex('user').insert([{
                     email: 'john.sheplerjr@gmail.com',
-                    name: 'John Shepler'
+                    postName: 'John Shepler'
                 },
                 {
                     email: 'thomas.castleman@gmail.com',
-                    name: 'Thomas'
+                    postName: 'Thomas'
                 },
 
             ]);

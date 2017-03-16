@@ -5,12 +5,15 @@ router.get('/', (req, res) => {
   if (req.query.recipeId) {
     database.getReview().where('recipe_id', req.query.recipeId)
     .join('recipe', 'recipe.id', ' review.recipe_id')
-    .select('review.*')
+    .join('user','recipe.user_id', 'user.email')
+    .select('review.*', 'user.postName')
     .then((review) => {
       res.send(review)
     })
   } else {
-    database.getReview().then((review) => {
+    database.getReview()
+    .join('user','user_id', 'user.email')
+    .then((review) => {
       res.send(review)
     })
   }

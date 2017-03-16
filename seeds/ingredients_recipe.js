@@ -21,7 +21,7 @@ exports.seed = function(knex, Promise) {
                     quantity: '1/2 cup'
                 }, {
                     recipe_id: 1,
-                    ingredient_id: 12,
+                    ingredient_id: 1,
                     quantity: '1/4 cup'
                 }, {
                     recipe_id: 1,

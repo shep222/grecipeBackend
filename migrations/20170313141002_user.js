@@ -1,7 +1,7 @@
 exports.up = function(knex) {
   return knex.schema.createTable('user', (user) => {
     user.string('email').primary()
-    user.string('name')
+    user.string('postName')
   })
 };
 

@@ -38,21 +38,20 @@ router.get('/:id', (req, res) => {
 
 
 router.post('/', (req, res) => {
-    database.createIngredient(req.body).then(() => {
-
-        res.sendStatus(201)
+    database.createIngredient(req.body).then((data) => {
+        res.json(data)
     })
 })
 
 router.patch('/:id', (req, res) => {
     database.editIngredient(req.params.id, req.body).then((id) => {
-        res.send(`Updated Item ${id}`)
+        res.json(id)
     })
 })
 
 router.delete('/:id', (req, res) => {
     database.deleteIngredient(req.params.id).then((id) => {
-        res.send(`You deleted ${id}`)
+        res.json(id)
     })
 })
 module.exports = router
