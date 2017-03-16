@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
   } else {
     database.getRecipe()
     .join('user','user_id', 'user.email')
-    .select('recipe.*', 'user.postName')
+    .select('recipe.*')
     .then((recipe) => {
       res.send(recipe)
     })
