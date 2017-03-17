@@ -1,5 +1,7 @@
 const router = require('express').Router()
 const database = require('../database/reviewAPI')
+const db = require('../database/userAPI.js')
+
 
 router.get('/', (req, res) => {
   if (req.query.recipeId) {
@@ -26,10 +28,20 @@ router.get('/:id', (req, res) => {
     })
 })
 
+// router.post('/', (req, res) => {
+//     database.createReview(req.body).then(() => {
+//         res.sendStatus(201)
+//     })
+// })
+
 router.post('/', (req, res) => {
-    database.createReview(req.body).then(() => {
-        res.sendStatus(201)
-    })
+    db.createUser(req.body.user_id)
+        .then(() => {
+           return database.createReview(req.body)
+        })
+        .then(() => {
+            res.sendStatus(201)
+        })
 })
 
 router.patch('/:id', (req, res) => {
